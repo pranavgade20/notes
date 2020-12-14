@@ -28,6 +28,21 @@
 		\item Email: \href{somesh@iiitl.ac.in}{somesh@iiitl.ac.in}
 		\item Google Classroom: \href{https://classroom.google.com/u/3/c/MjQxNjk2NDYzMjc3}{https://classroom.google.com/u/3/c/MjQxNjk2NDYzMjc3}
 	\end{itemize}
+	\section*{Marking Scheme}
+	\begin{itemize}
+		\item Mid Sem: 30m
+		\item End Sem: 70m
+		\item Assignments: 30m
+		\item Attendance: 10m
+		\item Class performance: 10m
+		\item Labs: 100m
+		\item Total: 250m
+	\end{itemize}
+	\section*{Assignment 1}
+	\begin{enumerate}
+		\item make a list of diff of electrical properties of Si and Ge (stuff like diffusion const, leakage current, operating temp, etc.)
+		\item Why Si is preferred over Ge(cost, smol leakage current, good for high temp., high power handling)
+	\end{enumerate}
 	\newpage
 	
 %	\chapter{Write the procedure to conduct the simulation in LTSpice/Circuit Lab}
@@ -40,14 +55,14 @@
 	\chapter{Introduction}	
 	\section{Basic Terms}
 	\begin{itemize}
-		\item Thermal Voltage($V_t$): Volt equivalent of temperature $ V_t = \frac{\overline{k}T}{q} $ \\
+		\item \textbf{Thermal Voltage($V_t$)}: Volt equivalent of temperature $ V_t = \frac{\overline{k}T}{q} $ \\
 		where\\ $\overline{k} =$  Boltzman's Constant$ = 1.381\times 10^{-23}J/\degree K  = q \times K$; \\
 		$ k = 8.65 \times 10^{-5} eV/ \degree K $\\
 		$ V_T = \frac{T}{11600} V$ \\
-		Suppose $ T=300 \degree K $(room temp.) So, $ V_T = \frac{300}{11600} = 0.0258V = 26mV$
-		\item Electron Volt(eV): Energy gained by an electron while moving through a potential difference of 1 volt. \\
+		Suppose $ T=300 \degree K $(room temp.):\\So, $ V_T = \frac{300}{11600} = 0.0258V = 26mV$
+		\textbf{\item Electron Volt(eV)}: Energy gained by an electron while moving through a potential difference of 1 volt. \\
 		$ 1 eV = q \times P.D. = 1.69 \times 10^{-19}C \times  1V = 1.69 \times 10^{-19}CV= 1.69 \times 10^{-19}J  $(this is K.E.)
-		\item Leakage Current($ I_0 $): \begin{itemize}
+		\item \textbf{Leakage Current($ I_0 $)}: \begin{itemize}
 			\item (aka Thermally generated current) 
 			\item This depends on minority Charge carrier.
 			\item Never depends on applied voltage. Depends on temperature.
@@ -66,7 +81,7 @@
 			\item $ I_0 $ is 7\% higher for 1\degree C rise in temp.
 			\item Si is better for high temp because smaller $ I_0 $, which can eliminate false triggering.
 		\end{itemize}
-		\item Energy Gap($ E_g $):\begin{itemize}
+		\item \textbf{Energy Gap($ E_g $)}:\begin{itemize}
 			\item aka Band Gap, see fig. \ref{fig:energy-band-diagram}
 			\begin{figure}
 				\centering
@@ -75,21 +90,115 @@
 				\label{fig:energy-band-diagram}
 			\end{figure}
 			
-			\item Metals: $ E_g = 0 $ even at 0K. So, $ e^- $ are available even at 0K.
-			\item Semiconductor: At 0K, behaves like insulator($ E_g = 1eV $). At 300K, band gap starts decreasing so conductivity increase.
-			\item Insulator: $ E_g = 5eV \;to\; 15 e $ so $ e^- $ will not jump at any temp.
-			\item $ E_g \propto \dfrac{1}{temp} $
-			\item $ E_{g(T)} = E_{g0} - \beta T $; ($\beta$ is $ 2.2  \times  10^{-4} $ for Ge; $ 3.6 \times  10^{-4} $ for Si)
+			\item Metals: $ E_G = 0 $ even at 0K. So, $ e^- $ are available even at 0K.
+			\item Semiconductor: At 0K, behaves like insulator($ E_G = 1eV $). At 300K, band gap starts decreasing so conductivity increases(however, not as conductive as metals).
+			\item Insulator: $ E_G = 5eV \;to\; 15 eV $ so $ e^- $ will not jump at any temp. Conductivity $\sigma = 0$ for ideal insulator; negligible practically.
+			\item $ E_G \propto \dfrac{1}{temp} $
+			\item $ E_{G(T)} = E_{G0} - \beta T $; ($\beta$ is $ 2.2  \times  10^{-4} $ for Ge; $ 3.6 \times  10^{-4} $ for Si)
 			\item \begin{tabular}{|c|c|c|c|}
 				\hline
 				& Ge & Si & GaAs \\
 				\hline
-				$ E_{g0} $ & 0.75eV & 1.21eV & - \\
+				$ E_{G0} $ & 0.75eV & 1.21eV & - \\
 				\hline
-				$ E_{g300} $ & 0.72eV & 1.1eV & 1.47eV \\
+				$ E_{G300} $ & 0.72eV & 1.1eV & 1.47eV \\
 				\hline
 			\end{tabular}
 		\end{itemize}
+		\item \textbf{Operating Temperature}: Maximum range in which the device operates. After this, melting pt. is reached and properties change. Below operating temp., band gap increases and secondary properties are seen.
+			\begin{tabular}{|c|c|c|}
+				\hline
+				Ge & Si & GaAs \\
+				\hline
+				-60C to 75C & -60 to 175C & -60C to 275C \\
+				\hline
+			\end{tabular}
+		\item \textbf{Electric Field Intensity($\epsilon$ or E)}: 
+			\begin{itemize}
+				\item aka field gradient
+				\item $ \epsilon= \frac{dv}{dx} = $voltage/length or width
+			\end{itemize}
+		\item \textbf{Mobility($\mu$)}: How freely charge carriers drift(Drift $\to$ by force) in semiconductor.\\
+			$\mu = \frac{Drift\; velocity(V)}{Electric\;Field\;Intensity(\epsilon)} = \frac{m^2}{V\;sec}$\\
+			$\mu \propto T^{-m}$\\
+			Ge: $\frac{\mu_n}{\mu_p} ~ 2.1$\\Si: $\frac{\mu_n}{\mu_p} ~ 2.6$\\
+			As field intensity increases, the number of collisions decrease, therefore decreasing the mobility(fig. \ref{fig:mobility-applied-electric-field-graph}) \\
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.7\linewidth]{img/Mobility-applied-electric-field-graph}
+				\caption{graph}
+				\label{fig:mobility-applied-electric-field-graph}
+			\end{figure}
+			\begin{tabular}{|c|c|c|c|}
+				\hline
+				& Ge & Si & GaAs \\
+				\hline
+				$\mu_n$ & $ 3800\; cm^2/V\:sec$ &  $ 1300\; cm^2/V\:sec$ &  $ 5800\; cm^2/V\:sec$ \\
+				\hline
+				$\mu_p$ &  $ 1800\; cm^2/V\:sec$ &  $ 500\; cm^2/V\:sec$ &  $ 400\; cm^2/V\:sec$ \\
+				\hline
+			\end{tabular}
+			Ge is better for high freq. applications due to high Gain Bandwidth Product\\
+			GaAs is best for microwave applications\\
+			Si is best for switching applications.
+		\item \textbf{Mass Action Law}: 
+		\begin{itemize}
+			\item In an extrinsic semiconductor under thermal equilibrium, the product of electrons and holes is always a constant, and is equal to the square of intrinsic concentration.
+			\item $ n \times p = n_i^2 $
+			\item This can be used to calculate the concentration of minority charge carriers.
+			\item Therefore, $ n_p = \frac{n_i^2}{p_p} $
+			\item $ majority\: carrier \propto Doping\: concentration $
+		\end{itemize}
+		 \item $ n_i $(Intrinsic Semiconductor Concentration):\\
+		 $ n_i^2 = A_0 T^3 e^{- \frac{E_{G0}}{KT}} $, where:\\
+		 $ A_0 $ is the material constant\\
+		 $ T $ is the temperature\\
+		 $ E_{G0} $ is the band gap
+		 \item \begin{tabular}{|c|c|}
+		 	\hline
+		 	NTC(Negative Temp. Coeff) & PTC(Positive Temp. Coeff) \\
+		 	\hline
+		 	$ E_G,\ mu $ & $ n_i, v_t $ \\
+		 	\hline
+		 \end{tabular}
+	  	 \item \textbf{Resistivity}: Specific resistance of any material($ \ohm \: m, \ohm \: cm $)\\
+	  	 \begin{tabular}{|c|c|}
+	  	 	\hline
+	  	 	Metals & Semiconductor \\
+	  	 	\hline
+	  	 	Incr. with Temp. & Decr. with Temp. \\
+	  	 	\hline
+	  	 \end{tabular}
+  	 	 \item \textbf{Conductivity}: Current carrying capacity of material($ \sigma = 1/\rho $)\\
+  	 	 $\sigma = carrier\: conc \times charge \times mobility$\\
+  	 	 For metals: $\sigma = n \times q \times \mu$(decreases with temp.)\\
+  	 	 For semiconductors: $\sigma = nq\mu_n + pq\mu+p$ (since both $ e^- $ as well as holes contribute)(overall incr. with temp.)
+  	 	 \item \textbf{Current density}: $ J = I/A \: Amp/m^2 = \sigma E $\\
+  	 	 See sigma formulae from above as well
+  	 	 \item \textbf{Diffusion Constant}: This a property of the material. It depends on temperature.
+  	 	 \item \textbf{Diffusion Length}: The average length a carrier moves between generation and recombination. \\
+  	 	 $ L = \sqrt{D\tau} $, where $\tau$ is the average lifetime\\
+  	 	 $ e^- $ diffusion length $ L_n = \sqrt{D_n\tau_n} $
+  	 	 \item \textbf{Concentration Gradient}: $ \frac{dn}{dx} $ is the $ e^- $ concentration gradient. $ \frac{dp}{dx} $ is holes concentration gradient.
+  	 	 \item $ J_p(diff) = +q\:D_n\frac{dn}{dx}  A/cm^2$\\$ J_n(diff) = -q\:D_p\frac{dp}{dx}  A/cm^2$ \\
+  	 	 $ J_{(diffusion)} = J_{n(diff)} + J_{p(diff)} $ \\
+  	 	 $ I_n(diff) = J_{n(diff}) \times A $, where A is the cross sect. area\\
+  	 	 Total current, $ J = J(diff) + J(drift) $ \\
+   	 	 $ J_n = qD_n\frac{dn}{dx} + nQ\mu_n \epsilon $ (similar for $ j_p $)
 	\end{itemize}
-		
+	\section{Einstein's Equation}
+	\begin{itemize}
+		\item $ \frac{D_n}{\mu_n} = V_T = kT = \frac{D_p}{\mu_p} $, where $ D $ is the Diffusion constant
+		\item unit of $\frac{D}{\mu}$ is Volt
+	\end{itemize}
+	\section{Semiconductors}
+\begin{itemize}
+	\item conductivity between conductor and insulator
+	\item around $ 1eV-1.5eV $
+	\item Bipolar
+	\item NTC
+	\item
+\end{itemize}
+	% make a list of diff of electrical properties of Si and Ge (stuff like diffusion const, leakage current, operating temp, etc.)
+	% Why Si is preferred over Ge(cost, smol leakage current, good for high temp., high power handling)
 \end{document}
