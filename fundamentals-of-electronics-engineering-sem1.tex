@@ -197,8 +197,114 @@
 	\item around $ 1eV-1.5eV $
 	\item Bipolar
 	\item NTC
-	\item
 \end{itemize}
-	% make a list of diff of electrical properties of Si and Ge (stuff like diffusion const, leakage current, operating temp, etc.)
-	% Why Si is preferred over Ge(cost, smol leakage current, good for high temp., high power handling)
+	\section{Doping}
+	process of adding impurities in SC. doping $\uparrow$, carrier conc.$\uparrow$, conductivity $\sigma$$\uparrow$
+	\begin{enumerate}
+		\item Trivalent/Acceptor impurities: B, Al, Ge, Sn
+		\item Pentavalent/Donor impurities: P, As, Sb, Bi
+		\item doping is based on conc. of impurities.
+		\begin{enumerate}
+			\item Moderate Doping: 1/[$ 10^6 \; to\; 10^8 $] $\rightarrow$ $ P\; N $
+			\item Lightly Doping: 1/[$ 10^11$] $\rightarrow$ $ P^-\; N^- $
+			\item Highly Doping: 1/[$ 10^3 $] $\rightarrow$ $ P^+\; N^+ $
+		\end{enumerate}
+		\item 1/$ 10^8 $ converts intrinsic to extrinsic \\
+		1/$ 10^8 $ doping in Ge $\rightarrow$ $\sigma$ $\uparrow$ 12 times \\
+		1/$ 10^7 $ doping in Ge $\rightarrow$ $\sigma$ $\uparrow$ 120 times
+		\item Doping can be homogeneous(same throughout) or non homogeneous(different at diff. points)
+		\item Ge-Si crystal: intrinsic at 300K
+	\end{enumerate}
+	\section{Extrinsic SC}
+	aka doped SC/Impurity SC/Artificial SC/degenerate SC/Compensated SC \\
+	\subsection{N type or Donor SC}
+	\begin{itemize}
+		\item Pentavalent
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.7\linewidth]{img/Extrinsic-semiconductor-1}
+			\caption{N-type SC}
+			\label{fig:extrinsic-semiconductor}
+		\end{figure}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[width=0.7\linewidth]{img/extrinsic_band_gap}
+			\caption{SC band gap at 300K \\ Donor energy lvl is 0.01 eV for Ge, 0.05 eV for Si}
+			\label{fig:extrinsic-band-gap}
+		\end{figure}
+		\item As temp $\uparrow$ from 0K to 300K, 5th $ e^- $ move from donor lvl to conduction(fig. \ref{fig:energy-band-diagram})
+		\item P type SC is represented with (+) because it has pentavalent atoms that have lost their $ e^- $
+	\end{itemize}
+	\subsection{P type or Acceptor SC}
+	\begin{itemize}
+	\item Trivalent
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/p_type}
+		\caption{P-type SC}
+		\label{fig:ptype}
+	\end{figure}
+	
+	\item See fig. \ref{fig:extrinsic-band-gap} for band gaps
+	\item P type SC is represented with (+) because it has pentavalent atoms that have lost their $ e^- $
+	\item Holes act as majority charge carrier. $ p>n_i $
+	\item $ N_D + p = N_A + n $ \\ $ n + N_A = p $ \\ $ p \approx N_A $
+	\end{itemize}
+	\textbf{Q1:} Calculate the intrinsic conductivity \& intr. resistivity of Ge at 300K. $ n_i = 2.5 \times  10^{13} atoms/cm^3,\mu_n = 3800 cm^2/V\: sec, \mu_p = 1800 cm^2/V\: sec $ \\
+	Ans: 
+	$\sigma_i = n_i q [\mu_p + \mu_n] = 0.0222 $\\
+	\textbf{Q2:} How many times $\sigma$ $\uparrow$ in the sc due to doping, IR = $ 1:10^7 $ Assume total no. of atoms = $ 4.421 \times 1-^{22} /cm^3 ; n_i = 2.5 \times 10^{13} / cm^3$\\
+	Ans: 
+	$ \frac{\sigma_n}{\sigma_i} = 120 times $\\
+	\textbf{Q3:} A pure SC is doped with acceptor impurities to extent of 4 impurity atoms for every 1 million of atoms. calculate $\sigma$\\
+	
+	\chapter*{TODO}
+	\section{Fermi Level}
+	\subsection{In intrinsic SC:}
+	In intrinsic SC, $ n = p $ \\
+	$ N_c  e^{-\frac{E_c-E_F}{kT}}  = N_v e^{-\frac{E_F-E_V}{kT}}$ \\
+	$ ln \frac{N_c}{N_v}  = \frac{E_c+E_v-2E_F}{kT}$ \\
+	$ E_F = \frac{E_C+E_V}{2} -\frac{kT}{2}ln\frac{N_c}{N_v}$\\
+	\begin{itemize}
+		\item \textbf{Case-1 } Let $ m_p = m_n $(assumption) $ N_c = N_v $\\
+		$ E_F = \frac{E_c + E_v}{2} $ 
+		\item At T=0K, fermi lvl lies in middle of CB\&VB. Hole conc. is 0 in VB
+		\item \textbf{At T=300K} $ E_F = \frac{E_c+E_v}{2} -\frac{kT}{2} ln \frac{N_c}{N_v}$ since $ N_c > _v $ and T > 0, fermi lvl will be lower. (see fig. \ref{fig:fermilvl})
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{img/fermi_lvl}
+			\caption{}
+			\label{fig:fermilvl}
+		\end{figure}		
+	\end{itemize}
+
+	\subsection{In N type SC: Effect of temp.}
+	$ n \approx N_D $ \\
+	$ N_c  e^{-\frac{E_c-E_F}{kT}}  \approx N_D$ \\
+	$ ln\frac{N_C}{N_D}  = \frac{E_C - E_F}{kT}$ \\
+	$ E_F = E_C - kT\; ln \frac{N_C}{N_D} $
+	\begin{itemize}
+		\item \textbf{Case 1} T = 0K \\
+		$ E_F = E_C $ so, no holes and no $ e^- $
+		\item \textbf{At 300K} $ E_F = E_C - k T\; ln \frac{N_C}{N_D} $ \\
+		see fig. \ref{fig:fermilvlntype}
+		\item \textbf{At more than 300K}: $ E_C > E_F $ since $\sigma$$\downarrow$ with temp \\
+		so, $ E_F $ goes downward
+		\begin{figure}
+			\centering
+			\includegraphics[width=0.7\linewidth]{img/fermi_lvl_ntype}
+			\caption{}
+			\label{fig:fermilvlntype}
+		\end{figure}
+	\end{itemize}
+	\subsection{In N type SC: Effect of Doping}
+	$ N_D \uparrow, let \; N_D > N_C $\\
+	$ E_C < E_F $
+	\begin{enumerate}
+		\item \textbf{if $ N_D \approx N_C $} $ E_F = E_C $
+		\item \textbf{if $ N_D > N_C $} $ E_F > E_C $
+		\item \textbf{if $ N_D < N_C $} $ E_F < E_C $
+	\end{enumerate}
+	\subsection{In P type SC: HOMEWORK}
+
 \end{document}
