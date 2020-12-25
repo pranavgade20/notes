@@ -258,9 +258,50 @@
 	$ \frac{\sigma_n}{\sigma_i} = 120 times $\\
 	\textbf{Q3:} A pure SC is doped with acceptor impurities to extent of 4 impurity atoms for every 1 million of atoms. calculate $\sigma$\\
 	
-	\chapter*{TODO}
-	\section{Fermi Level}
-	\subsection{In intrinsic SC:}
+	\subsection{Compensated SC} Acceptor as well as Donor added
+	\begin{enumerate}
+		\item if $ N_A = N_D \implies $ intrinsic
+		\item if $ N_A > N_D \implies $ P type compensated SC
+		\item if $ N_A < N_D \implies $ N type compensated SC
+	\end{enumerate}
+	\subsubsection{Equation for conc. of $ e^- $ in the conduction band of Intrinsic SC}
+	The equation for $ e^- $ conc. in the CB of intrinsic SC is: $ n = N_C \: e^{-\frac{E_C-E_F}{kT}} $, where $ N_C $ is the material const, a fxn of temp.($ N_C \propto T^{3/2} $)\footnote{$ N_C = 2(\frac{2\pi k T M_n}{h^2})^{3/2} $; in Si, $ M_C = 1.08\times m $, where $ m $ is the rest mass of $ e^- = 9.1\times 10^{-31}kg $}
+
+	\subsubsection{Fermi Level/Energy $ E_F $} is the max. energy posessed by $ e^- $ at 0K, see fig. \ref{fig:energy-brands-in-silicon}
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/energy-brands-in-silicon}
+		\caption{Energy Bands of Silicon}
+		\label{fig:energy-brands-in-silicon}
+	\end{figure}
+	
+	\subsubsection{Equation for conc. of holes in the valence band of Intrinsic SC}
+	$ p = N_V \: e^{-\frac{E_F-E_V}{kT}} $, where $ N_V $ is the material const, a fxn of temp.($ N_C \propto T^{3/2} $)\footnote{$ N_V = 2(\frac{2\pi k T M_p}{h^2})^{3/2} $; in Si, $ M_V = 0.56\times m $}
+	
+	\subsubsection{Eqn. of intrinsic conc. $ n_i $}
+	1: $ n = N_C \: e^{-\frac{E_C-E_F}{kT}} $\\
+	2: $ p = N_V \: e^{-\frac{E_F-E_V}{kT}} $\\
+	Multiply 1 and 2: 
+	$ np = N_C N_V \: e^{-\frac{E_C-E_V}{kT}} $\\
+	$ np = N_C N_V \: e^{-\frac{E_G}{kT}} $\\
+	$ A_0 = N_CN_V  = 4(\frac{2\pi k}{h^2})^3 (M_NM_P)^{3/2} T^3$\\
+	mass action law: $ n_i^2 = np $\\
+	$\therefore , n_i^2 = A_0 T^3e^{-\frac{E_{G0}}{kT}}$
+	
+	\subsection{Degenerate SC:} minority conc. is negligible bcoz v high majority conc\\
+	
+	\subsection{Effect of temp. on $ \sigma $ in extrinsic SC}
+	see fig. \ref{fig:effect-of-temp}\\
+	Above Curie temp $ T_C $, starts behaving like intrinsic SC.
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/effect-of-temp}
+		\caption{Dependence of $ \sigma $ on T. $ T_C $ is the Curie temp.}
+		\label{fig:effect-of-temp}
+	\end{figure}
+	
+
+	\subsection{Effect of temp. on $ \sigma $ in intrinsic SC:}
 	In intrinsic SC, $ n = p $ \\
 	$ N_c  e^{-\frac{E_c-E_F}{kT}}  = N_v e^{-\frac{E_F-E_V}{kT}}$ \\
 	$ ln \frac{N_c}{N_v}  = \frac{E_c+E_v-2E_F}{kT}$ \\
@@ -270,7 +311,7 @@
 		$ E_F = \frac{E_c + E_v}{2} $ 
 		\item At T=0K, fermi lvl lies in middle of CB\&VB. Hole conc. is 0 in VB
 		\item \textbf{At T=300K} $ E_F = \frac{E_c+E_v}{2} -\frac{kT}{2} ln \frac{N_c}{N_v}$ since $ N_c > _v $ and T > 0, fermi lvl will be lower. (see fig. \ref{fig:fermilvl})
-		\begin{figure}
+		\begin{figure}[h]
 			\centering
 			\includegraphics[width=0.7\linewidth]{img/fermi_lvl}
 			\caption{}
@@ -278,7 +319,7 @@
 		\end{figure}		
 	\end{itemize}
 
-	\subsection{In N type SC: Effect of temp.}
+	\subsection{Effect of temp. on $ \sigma $ in N type SC}
 	$ n \approx N_D $ \\
 	$ N_c  e^{-\frac{E_c-E_F}{kT}}  \approx N_D$ \\
 	$ ln\frac{N_C}{N_D}  = \frac{E_C - E_F}{kT}$ \\
@@ -297,7 +338,7 @@
 			\label{fig:fermilvlntype}
 		\end{figure}
 	\end{itemize}
-	\subsection{In N type SC: Effect of Doping}
+	\subsection{Effect of doping on $ \sigma $ in N type SC}
 	$ N_D \uparrow, let \; N_D > N_C $\\
 	$ E_C < E_F $
 	\begin{enumerate}
@@ -305,6 +346,6 @@
 		\item \textbf{if $ N_D > N_C $} $ E_F > E_C $
 		\item \textbf{if $ N_D < N_C $} $ E_F < E_C $
 	\end{enumerate}
-	\subsection{In P type SC: HOMEWORK}
+	\subsection{Effect of * in P type SC: HOMEWORK}
 
 \end{document}
