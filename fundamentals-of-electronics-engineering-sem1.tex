@@ -42,16 +42,10 @@
 	\begin{enumerate}
 		\item make a list of diff of electrical properties of Si and Ge (stuff like diffusion const, leakage current, operating temp, etc.)
 		\item Why Si is preferred over Ge(cost, smol leakage current, good for high temp., high power handling)
+		\item Differences b/w direct \& indirect band gap SC
 	\end{enumerate}
 	\newpage
 	
-%	\chapter{Write the procedure to conduct the simulation in LTSpice/Circuit Lab}
-%	Title:
-%	Aim: To study the 
-%	Component Requirements: The softwares, a computer
-%	Theory: What is LTSPICE? its use, and what we can do? what are its limitations?
-%	Procedure: How we can perform experiment in LTSPICE? \\
-%	Open software; select resistor/copmponents; connect components; connect power supply; run/simulate
 	\chapter{Introduction}	
 	\section{Basic Terms}
 	\begin{itemize}
@@ -347,5 +341,138 @@
 		\item \textbf{if $ N_D < N_C $} $ E_F < E_C $
 	\end{enumerate}
 	\subsection{Effect of * in P type SC: HOMEWORK}
+	
+	\section{Hall Effect}
+	Hall Effect States that If a specimen(metal/SC) carrying current $ I $ is placed in transverse magnetic field $ B $, $ E $ is induced in a direction $ \perp $ to both $ B \& I $ (fig. \ref{fig:hall-effect})
+	\begin{figure}[h]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/hall-effect}
+		\caption{Hall Effect}
+		\label{fig:hall-effect}
+	\end{figure}
+	\par 
+	From Hall effect, we can determine:
+	\begin{enumerate}
+		\item Whether the given specimen is metal/SC(intrinsic, P, N)
+		\item Carrier conc.
+		\item Mobility of charge carrier
+		\item H, B
+	\end{enumerate}
+	Let $ V_H  = 2-1$ in fig. \ref{fig:hall-effect}
+    \begin{itemize}
+    	\item If $ V_H  <  0$ it's Metal/N-type
+    	\item If $ V_H > 0$ it's P-type
+    	\item If $ V_H \approx \mu V $ it's Metal
+       	\item If $ V_H \approx m V $ it's SC
+       	\item If $ V_H \rightarrow 0 $ it's intr. SC
+    \end{itemize}
+	\subsection{Field Intensity}
+	Magnitude of field Intensity $ |E| = \frac{|V_H|}{d} V/m$ \\
+	Hall Voltage $ V_H = Ed \; Volt $\\
+	$ V_H = \dfrac{BI}{\rho w} $, where $\rho$ is the charge, $ \dfrac{1}{\rho} = R_H$ is Hall Effect const.\\
+	$ V_H = \dfrac{BIR_H}{W} Volts$, or $ V_H \propto R_H $\\
+	\\
+	$\star$ $ \mu = \dfrac{8}{3\pi} \sigma R_H $, experimentally
 
+	\subsection{Applications}
+	\begin{itemize}
+		\item Magnetic Field Meter $\rightarrow$ H
+		\item Hall Effect multiplier: (I, B) $\rightarrow$ $ V_H $
+	\end{itemize}
+	$\star$ $ \rho $ = charge $\times$ carrier conc. ($ C/m^3 $)
+	We know, $ R_H = \dfrac{1}{charge \times c.c.} $
+	Therefore,
+	\begin{itemize}
+		\item \textbf{$ R_H < 0 $} for metals, N type SC
+		\item \textbf{$ R_H > 0 $} for P type SC
+		\item \textbf{$ R_H $ very large} for intr. SC
+	\end{itemize}
+	\subsubsection{Alternate formulae}
+	$ V_H = \dfrac{BJd}{qN_D} $\\
+	$ V_H = \dfrac{BJd}{qN_A} $\\
+	\textbf{Question:} In a N type Sc, a sample has donor density $ N_D = 10^{21}/m^3 $. It is arranged in Hall experiment having magnetic field $ 0.2 WB.M^2 $\& the current density $ J =  500A/m^2$. Find the V generated when $ w=d=2mm $\\
+	Ans: $ -1.25mV $
+	
+	\section{Classification of SC}
+	\begin{itemize}
+		\item \textbf{Direct Band Gap SC} like GaAs, GaAsP; give out 99\% light, 1\% heat
+		\item \textbf{Indirect Band Gap SC} like Ge, Si; give out 1\% light, 99\% heat
+	\end{itemize}
+
+	\chapter{SC Diode}
+	\begin{itemize}
+		\item P-N Junction Diode
+		\item \textbf{Metal SC diode} like Schottly Diode, Point contact Diode
+	\end{itemize}
+	\section{P-N Junction Diode}
+	Formed when a bonding force is created b/w P-type and N-type SC. \\
+	Some methods of fabrication are:
+	\begin{enumerate}
+		\item Diffusion method
+		\item Alloy Junction
+		\item Grown Junction
+		\item Epitaxial method (epi-upon, taxial-layer)
+	\end{enumerate}
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/pn-diode}
+		\caption{P-N Junction Diode}
+		\label{fig:pn-diode}
+	\end{figure}
+
+	\subsection{$ V_0 $} Potential hill/Barrier Potential/Barrier Voltage/Contact potential/Built-in potential/Diffusion potential\\
+	$ V_0 = V_T \; ln \dfrac{N_A N_D}{N_i^2} $ \\
+	therefore, $ V_0 \downarrow with\;  T \uparrow $, because $ n_i^2 \propto T^3 $ ($ V_0 \downarrow by \; 2.5mV \; for t \uparrow by \; 1K $)
+	\begin{itemize}
+		\item Si: 0.6 to 0.9 V (0.7V avg.)
+		\item Ge: 0.1V to 0.5 V (0.2V avg.)
+	\end{itemize}
+	\begin{figure}
+		\centering
+		\includegraphics[width=0.2\linewidth]{img/diode_symbol}
+		\caption{}
+		\label{fig:diodesymbol}
+	\end{figure}
+	
+	\subsection{Depletion Layer}
+	aka Space Charge region/Transition region. Any layer in which charge carriers are absent. This contains immobile ions. \\
+	Formed due to diffusion of majority charge carriers.\\
+	Depletion width $ w = \sqrt{\frac{2\epsilon}{q}(\frac{1}{N_A} + \frac{1}{N_D})} $ \\
+	$ \epsilon = permittivity\; in \; I/m  = \epsilon_0 \epsilon_r$\\
+	$\epsilon_r(Si) = 11.7;\; \epsilon_r(Ge) =16$\\
+	If $ N_A = N_D  \implies w = \sqrt{\dfrac{4\epsilon V_0}{qN_A}}$\\
+	therefore, $ w \propto\dfrac{1}{\sqrt{Doping}} $\\
+	Also, $ w \propto \dfrac{1}{\sqrt{Fwd.bias}} $
+	
+	\subsection{Forward Bias}
+	As $\epsilon$ is applied, the depletion width narrows.
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/potential-across-diode}
+		\caption{}
+		\label{fig:potential-across-diode}
+	\end{figure}
+	When $ V_D $ is the Depletion potential, $ V = V_R + V_D $\\Barrier Voltage at junction = $ V_0 - |V_D| $
+	\begin{itemize}
+		\item If $ V_D < V_0 $ no majority carriers cross
+		\item If $ V_D \approx V_0 $, then  $ I_F \approx 0 $
+		\item If $ V_D > V_0 \implies I_F  \uparrow$ 
+	\end{itemize}
+	$\star$ \textbf{Cut-in Voltage, or knee voltage $ V_Y $} is the min. of $ V_D $ ($ V_Y = 0.3V(for \; Ge) =0.7V(for \; Si) $) \\
+	forward current\footnote{forward current is independent of T} $ I_f = I_0[ e^{V_d/\eta k T} - 1] $ (where $ I_0 $ is the reverse saturation current; $ V_d $ is the voltage across the diode, $\eta$ is the recombination factor or utility factor (1 for Ge, 2 for Si)) \\
+	$ V_D = \eta V_T log(\dfrac{I_f+I_0}{I_0}) \approx \eta V_T log(\dfrac{I_f}{I_0}) $ \\
+	$ V_D \downarrow $ by $ 2 mV $ per 1C
+	
+	\subsection{Reverse Bias}
+	Some reverse saturation current does flow. It does not matter on $ V_R $ because the concentration of minority charge carriers is very low. \\
+	$ w \propto \sqrt{Reverse \; Bias} $ \\
+	$ V_J = |V_{R}| +| V_0 |$ \\
+	$ w = \sqrt{\dfrac{2\epsilon}{q}(\frac{1}{N_A} + \frac{1}{N_D}) V_J} $
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=0.7\linewidth]{img/vi-characteristics}
+		\caption{V-I characteristics of diode}
+		\label{fig:vi-characteristics}
+	\end{figure}
+	
 \end{document}

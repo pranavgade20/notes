@@ -1,0 +1,100 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% University/School Laboratory Report
+% LaTeX Template
+% Version 3.1 (25/3/14)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Linux and Unix Users Group at Virginia Tech Wiki 
+% (https://vtluug.org/wiki/Example_LaTeX_chem_lab_report)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass{article}
+
+\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+\usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{natbib} % Required to change bibliography style to APA
+\usepackage{amsmath} % Required for some math elements 
+
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+}
+
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{Assignment 1} % Title
+
+\author{Pranav \textsc{Gade}} % Author name
+
+\date{\today} % Date for the report
+
+\begin{document}
+
+\maketitle % Insert the title, author and date
+
+\begin{center}
+\begin{tabular}{l r}
+Batch: & CS\&AI \\
+Roll no.: & LCI2020010 \\
+Date Performed: & December 1, 2020 \\ % Date the experiment was performed
+Instructor: & Dr. Somesh Kumar % Instructor/supervisor
+\end{tabular}
+\end{center}
+
+% If you wish to include an abstract, uncomment the lines below
+% \begin{abstract}
+% Abstract text
+% \end{abstract}
+
+%----------------------------------------------------------------------------------------
+%	SECTION 1
+%----------------------------------------------------------------------------------------
+\renewcommand\thesubsubsection{\arabic{subsubsection}}
+
+\section*{Part A}
+
+\subsubsection{What is the difference between a silicon (Si) and a germanium (Ge) semiconductor? Why we prefer Silicon over Germanium?}
+\begin{tabular}{|c|c|c|}
+	\hline
+	& Ge & Si \\
+	\hline
+	Leakage current & $ \micro A $ & $ \nano A $ \\
+	\hline
+	$ E_G0 $ & 0.75eV & 1.21eV \\
+	\hline
+	Operating Temperature & -60C to 75C & -60C to 275C \\
+	\hline
+	$ \mu_n $ & $ 3800cm^2/V $ sec & $ 1300cm^2/V  sec $ \\
+	\hline
+	$ \mu_p $ & $ 1800cm^2/V sec $ & $ 500cm^2/V sec $ \\
+	\hline
+\end{tabular}
+We prefer Si over Ge because Si has a lower leakage current, and is suitable over a larger range of operating temperature. Si is also one of the most abundant elements on earth.
+
+\subsubsection{Explain about the Fermi level in p type semiconductor. How the Fermi level in p type semiconductor varies with temperature and doping.}
+Fermi level is the maximum energy possessed by electrons at 0K.
+
+%----------------------------------------------------------------------------------------
+
+
+\end{document}

@@ -35,9 +35,6 @@
 	urlcolor=cyan,
 }
 
-\setlength\parindent{0pt} % Removes all indentation from paragraphs
-
-\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
 
 %\usepackage{times} % Uncomment to use the Times New Roman font
 
@@ -45,7 +42,7 @@
 %	DOCUMENT INFORMATION
 %----------------------------------------------------------------------------------------
 
-\title{Experiment 3\\p-n junction diode} % Title
+\title{Experiment 3\\P-N Junction Diode} % Title
 
 \author{Pranav \textsc{Gade}} % Author name
 
@@ -75,27 +72,143 @@
 	
 	\section{Aim}
 	
-	To study Volt-Ampere Characteristics of PN junction diode.
+	To study the Volt-Ampere Characteristics of a P-N junction diode.
 	
 	\section{Objective}
 	\begin{enumerate}
-		\item To plot Volt-Ampere Characteristics of PN junction diode.
-		\item To find cut-in Voltage for Silicon P-N Junction Diode
+		\item To plot the Volt-Ampere characteristics of a P-N junction diode.
+		\item To find cut-in Voltage for silicon P-N Junction Diode.
+		\item To find static and dynamic resistances of a P-N Junction Diode.
 	\end{enumerate}
 	
 	\subsection{Components Required}
-	\label{definitions}
-	\begin{description}
-		\setlength\itemsep{0em}
-		\item LTSpice Simulator
-		\item PN junction diode
-	\end{description} 
+	\textbf{LTSpice Simulator:} P-N Junction Diode(1N914), Resistance(1$\Omega$), Power Supply, and wires are all provided in the software.
 	
 	%----------------------------------------------------------------------------------------
 	%	SECTION 2
 	%----------------------------------------------------------------------------------------
 	
-	\section{Description of Components}
-
+	\section{Explanation}
+	A PN Junction diode is made from p-type and n-type semiconductors. P-type semiconductors are created by adding electron acceptor impurities to a semiconductor during manufacture. Therefore, holes are the majority charge carrier. In n-type semiconductors, electron donor impurities are added. Therefore, the majority charge carriers are electrons. A diode is a device that allows current flow in only one direction and provides very large resistance in opposite direction. \\
+	The diode is said to be forward biased when positive terminal of the input is connected to the anode of the diode, and the negative terminal of the input is connected to the cathode of the diode. In this case the voltage drop across the depletion region due to majority carriers is by $ V_0-V_f $. However, minority charge carriers do play a role at low voltages, and therefore the current through the diode isn't 0. So, beyond a certain voltage the diode can be assumed to be a closed switch. This voltage is also referred as the cut-in voltage. \\
+	In this condition, the volt-ampere characteristics are given by the equation $ I_f = I_0[ e^{V_d/\eta k T} - 1] $ (where $ I_0 $ is the reverse saturation current; $ V_d $ is the voltage across the diode, $\eta$ is the recombination factor or utility factor (1 for Ge, 2 for Si)). \\
+	The diode is said to be reversed biased when the positive terminal of the input is connected to the cathode of the diode and the negative terminal of the input is connected to the anode of the diode. In this case the voltage drop across the depletion region is given by $ V_0 + V_R $. In this case a very small reverse saturation current does flow. This is due to the presence of minority charge carriers. Because the concentration of minority charge carriers is very low, we can assume that this leakage current is constant, unless the voltage applied is very high. Therefore, the diode can be approximated to be a open switch in this case. \\
 	
+	\section{Circuit Diagrams}
+	\subsection{Forward Bias}
+		\begin{center}
+			\label{schematic:fwd-bias}
+			\includegraphics[width=0.7\linewidth]{"forward bias schematic"}
+		\end{center}		
+	\subsection{Reverse Bias}
+		\begin{center}
+			\label{schematic:rev-bias}
+			\includegraphics[width=0.7\linewidth]{"reverse bias 	schematic"}
+		\end{center}		
+	\section{Procedure}
+	\subsection{Forward Bias}
+	\begin{enumerate}
+		\item Create a schematic as shown in fig. \ref{schematic:fwd-bias}
+		\item Set the simulation software to run a DC sweep from 0V-3V
+		\item Run the simulation, and plot the current through the diode $ I_F $ against the voltage across the diode $ V_F $
+		\item Find the cut-in voltage and static resistance from the graph.
+	\end{enumerate}
+	\subsection{Forward Bias}
+	\begin{enumerate}
+		\item Create a schematic as shown in fig. \ref{schematic:rev-bias}
+		\item Set the simulation software to run a DC sweep from 0V-7V
+		\item Run the simulation, and plot the voltage across the diode $ V_R $ and current through the diode $ I_R $ against the source voltage $ V_S $
+	\end{enumerate}
+
+	\section{Observation Tables}
+	\subsection{Forward Bias}
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		& $ V_s $ (Volts) & $ V_f $ (Volts) & $ I_f $ (mA) \\
+		\hline
+		1 & 0.25 & 0.25 & 0 \\
+		\hline
+		2 & 0.5 & 0.5 & 0 \\
+		\hline
+		3 & 0.75 & 0.73 & 19.7 \\
+		\hline
+		4 & 1 & 0.876 & 125.5 \\
+		\hline
+		5 & 1.25 & 0.989 & 263.5 \\
+		\hline
+		6 & 1.5 & 1.092 & 410.2 \\
+		\hline
+		7 & 1.75 & 1.19 & 560.6 \\
+		\hline
+		8 & 2 & 1.287 & 713.1 \\
+		\hline
+		9 & 2.5 & 1.383 & 1021.5 \\
+		\hline
+		10 & 2.25 & 1.478 & 866.9 \\
+		\hline
+		11 & 2.75 & 1.573 & 1176.9 \\
+		\hline
+		12 & 3.00 & 1.667 & 1332.7 \\
+		\hline
+	\end{tabular}
+	\end{center}
+	\subsection{Reverse Bias}
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		& $ V_s $ (Volts) & $ V_R $ (Volts) & $ I_R $ (nA) \\
+		\hline
+		1 & 0 & 0 & 0 \\
+		\hline
+		2 & 0.5 & 0.5 & 2.52 \\
+		\hline
+		3 & 1 & 1 & 2.521 \\
+		\hline
+		4 & 1.5 & 1.5 & 2.522 \\
+		\hline
+		5 & 2 & 2 & 2.522 \\
+		\hline
+		6 & 2.5 & 2.5 & 2.523 \\
+		\hline
+		7 & 3 & 3 & 2.523 \\
+		\hline
+		8 & 3.5 & 3.5 & 2.523 \\
+		\hline
+		9 & 4 & 4 & 2.534 \\
+		\hline
+		10 & 4.5 & 4.5 & 2.524 \\
+		\hline
+		11 & 5 & 5 & 2.534 \\
+		\hline
+	\end{tabular}
+	\end{center}	
+	\section{Graphs}
+	\subsection{Forward Bias}
+		\label{graph:fwd-bias}
+		\includegraphics[width=1\linewidth]{"forward bias graph"}
+	\subsection{Forward Bias}
+		\label{graph:rev-bias}
+		\includegraphics[width=1\linewidth]{"reverse bias graph"}
+		
+	\section{Calculations}
+	\begin{enumerate}
+		\item Cut-in Voltage: To calculate the cut-in voltage, extend the characteristic line in graph \ref{graph:fwd-bias} backwards until it meets the x-axis. This point is the cut-in voltage. From graph \ref{graph:fwd-bias} we see that the cut-in voltage is \textbf{0.7V}.
+		\item Static Resistance: To calculate the static resistance, we take a point on the graph, and use the following formula to calculate the resistance: \\ $ R_{DC}  =\dfrac{V_F}{I_F} = \dfrac{1.4V}{0.9A}$= \textbf{1.556 $ \Omega $}
+		\item Dynamic Resistance: To calculate the dynamic resistance, take two points on the graph(fig. \ref{graph:fwd-bias}) and calculate the resistance with the following formula: \\ $ R_{AC} = \dfrac{\Delta V}{\Delta I}  = \dfrac{V_2 - V_1}{I_2 - I_1} = \dfrac{0.4}{1.65}  = $ \textbf{0.61$ \Omega $} \\
+	\end{enumerate}
+	
+	\section{Precautions}
+	\begin{enumerate}
+		\item Make sure the circuit has a ground connection component.
+		\item Check that the schematic is complete and the wires and components do not have gaps between them.
+		\item Ensure that the correct components are selected.
+	\end{enumerate}
+
+	\section{Result}
+	\begin{enumerate}
+		\item Cut-in Voltage =\textbf{ 0.7 V}
+		\item Static resistance =\textbf{ 1.556 V}
+		\item Dynamic Resistance =\textbf{ 0.61 V}
+	\end{enumerate}
 \end{document}
