@@ -43,6 +43,7 @@
 		\item make a list of diff of electrical properties of Si and Ge (stuff like diffusion const, leakage current, operating temp, etc.)
 		\item Why Si is preferred over Ge(cost, smol leakage current, good for high temp., high power handling)
 		\item Differences b/w direct \& indirect band gap SC
+		\item how zener diode can be used as voltage regulator
 	\end{enumerate}
 	\newpage
 	
@@ -461,12 +462,12 @@
 		\item If $ V_D > V_0 \implies I_F  \uparrow$ 
 	\end{itemize}
 	$\star$ \textbf{Cut-in Voltage, or knee voltage $ V_Y $} is the min. of $ V_D $ ($ V_Y = 0.3V(for \; Ge) =0.7V(for \; Si) $) \\
-	forward current\footnote{forward current is independent of T} $ I_f = I_0[ e^{V_d/\eta k T} - 1] $ (where $ I_0 $ is the reverse saturation current; $ V_d $ is the voltage across the diode, $\eta$ is the recombination factor or utility factor (1 for Ge, 2 for Si)) \\
+	forward current\footnote{forward current is independent of T} $ I_f = I_0[ e^{V_d/\eta k T}] $ (where $ I_0 $ is the reverse saturation current; $ V_d $ is the voltage across the diode, $\eta$ is the recombination factor or utility factor (1 for Ge, 2 for Si)) \\
 	$ V_D = \eta V_T log(\dfrac{I_f+I_0}{I_0}) \approx \eta V_T log(\dfrac{I_f}{I_0}) $ \\
 	$ V_D \downarrow $ by $ 2 mV $ per 1C
 	
 	\subsection{Reverse Bias}
-	Some reverse saturation current does flow. It does not matter on $ V_R $ because the concentration of minority charge carriers is very low. \\
+	Some reverse saturation current does flow($ I_r = I_0 $). It does not matter on $ V_R $ because the concentration of minority charge carriers is very low. \\
 	$ w \propto \sqrt{Reverse \; Bias} $ \\
 	$ V_J = |V_{R}| +| V_0 |$ \\
 	$ w = \sqrt{\dfrac{2\epsilon}{q}(\frac{1}{N_A} + \frac{1}{N_D}) V_J} $
@@ -476,5 +477,121 @@
 		\caption{V-I characteristics of diode}
 		\label{fig:vi-characteristics}
 	\end{figure}
+
+	\subsection{Diode Resistance}
+	\begin{itemize}
+		\item forward resistance ($ R_f $): 10 $\Omega$ to 100 $\Omega$
+		\begin{itemize}
+			\item \textbf{DC or Static resistance}: $ R_F = \dfrac{V'}{I'} \Omega $
+			\item \textbf{AC or Dynamic Resistance}: $ r = \dfrac{\Delta V_0}{\Delta I_f} = \dfrac{\eta V_T}{I_f}$\\
+			Dynamic conductance(g) = $ \dfrac{1}{r}  = \dfrac{I_f}{\eta V_T} \implies g \propto I_f $
+		\end{itemize}
+		\item reverse resistance ($ R_r $): $ R_r > 1M\Omega $ \\
+		$ I_0 \uparrow with \; T $ \\
+		$ R_r \downarrow with \; T $
+	\end{itemize}
+	\subsection{Equivalent circuit of the diode}
+		\includegraphics[width=\linewidth]{img/Equivalent-Circuit-of-Diode}
+		$\star$ A fwd. bias diode can be replaced by its cut-in voltage.
+	\section{Ideal/Perfect/Imaginary diode} 
+	$ R_f = 0 $; $ R_r = \infty $
+		\includegraphics[width=0.7\linewidth]{img/ideal-diode-vi}
+	\section{Junction Capacitance ($ C_J $)}
+	in the range of pF($ 10^{-12} F $) \\
+	$ C_J = C = \dfrac{A \epsilon}{w} $
+	
+	\subsection{Transition Capacitance($ C_T $)}
+	\begin{itemize}
+		\item 	aka Depletion layer capacitance aka Space Charge Capacitance
+		\item $ C_T $ is the junction capacitance in R.B.
+		\item $ C = \dfrac{Q}{V} = \dfrac{dQ}{dV} $
+		 \item when PN jun. is RB, with a change in RB voltage w ans immobile charge carrier change, this role of change of immobile charges wet a change in RB is called $ C_T $ 
+		\item Generally, $ C_T \propto V^{-n} $ where n is graded coeff., V is applied RB voltage.
+	\item n = 1/2 : step graded/abrupt pn diode \\
+		n = 1/3 : linear graded \\
+		n = 1/2.5 : diffused PN Junction (pls confirm is it 1/3.5)
+	\end{itemize}	
+	\subsection{Diffusion capacitance $ C_d $}
+	\begin{itemize}
+		\item $ C_d \propto\sqrt{Dopin}g \propto \sqrt{F.bias}$
+		\item $ C_d = \tau h $
+		\item $ C_d $ will appear only at high freq. applications.
+		\item $ C_d > C_T$ always 
+	\end{itemize}
+	
+	\section{Step graded diode or Abrupt PN Junction Diode}
+		\includegraphics[width=0.7\linewidth]{img/step-graded-diode}
+	\begin{itemize}
+		\item $ \dfrac{W_N}{W_P}  =  \dfrac{N_A}{N_D} $
+		\item less common formula: $ \dfrac{W_N}{W_P}  =  \dfrac{N_A^{1/2}}{N_D^{1/2}} $
+	\end{itemize}
+
+	\subsection{Numericals}
+	\begin{enumerate}
+		\item \textbf{Find the forward current of GE diode operating at room temp when fwd. voltage is 100mV; $ I_0 = 20\mu A $ }\\
+		$ I_f = I_0[ e^{V_d/\eta k T}]  = 0.936mA$
+		\item \textbf{A Si diode has time const 25 ns at room temp; $ I_F = 5mS $ Find $ C_d $} \\
+		$\rightarrow$ $ C_d = \tau g; g = \dfrac{I_f}{\eta V_T} $
+		\includegraphics[width=\linewidth]{img/numericals 2nd jan}
+	\end{enumerate}
+
+	\section{Zener Diode}
+	\begin{itemize}
+		\item \includegraphics[width=0.5\linewidth]{img/zd symbol}
+		\item \includegraphics[width=\linewidth]{img/Zener diode characteristics}
+		\item Normal diode doping $\rightarrow 1: (10^6 - 10^8)$ \\ Zener diode doping $\rightarrow 1: 10^5$
+		\item By $\uparrow$ or $\downarrow$ the doping lvl. we can change the sc properties
+		\item operated in rb
+		\item ZD is breakdown diode because operated beyond $ V_{br} $
+		\item Si is used
+		\item In F.B. ZD acts like a normal diode
+		\item used in constant voltage device and voltage regulators.
+		\item $ R_z = \dfrac{\Delta V_z}{\Delta I_z} $ \\ in ideal case, $ R_z = 0 $ and $ V_z = V_{br} $
+	\end{itemize}
+	\subsection{Equivalent ckt}
+	\includegraphics{img/zd equivalent}
+	\subsection{Zener breakdown phenomenon}
+	\begin{itemize}
+		\item $ w \propto \dfrac{1}{\sqrt{Doping}} $ and $ E \propto\dfrac{1}{w} $
+		\item Zener breakdown occurs due to large electric field intensity
+		\item $ V_{br} < 6V \implies  $ for Zener breakdown
+		\item ZB occurs due to tearing off / rupturing of covalent bond in depletion region
+	\end{itemize}
+	\subsection{Avalanche breakdown}
+	\begin{itemize}
+		\item Chain rxn, due to $ e^- $ multiplication
+		\item $ V_{br} > 6V \implies  $ Avalanche breakdown
+		\item Multiple collisions b/w electron and ions in the depletion region
+		\item due to impact ionization
+		\item In a lightly doped diode breakdown is due to avalanche effect
+		\item PTC : T $\uparrow$ $ \implies $ V $\uparrow$(as mean free path decr. due to incr. collisions)
+	\end{itemize}
+	
+	\section{LED}
+	\begin{itemize}
+		\item Light emitting diode
+		\item \includegraphics[width=0.2\linewidth]{img/led symbol}
+		\item made frm GaAs
+		\item electro-luminescence: e-h pair combine, energy is released
+		\item colors depend on the wavelength and on dopant: $ \lambda = \dfrac{1.24}{E_g} $
+		\item below (say, for GaAs) 1.3V, led will not glow\\ above 3.3V, it will burn out after a few seconds.
+		\item $ I_f $ is 10mV (implied)
+		\item response time: how long it takes to turn on and off after having the signal applied, in order of $ \mu s $
+	\end{itemize}
+	\section{Photodiode}
+	\begin{itemize}
+		\item photosensitive device
+		\item \includegraphics[width=0.2\linewidth]{img/photodiode symbol}
+		\item is normal diode plus photosensitive coating like CdS, Se, ZnS
+		\item always in reverse bias
+		\item doping is less so depletion layer width is more
+		\item works on photoconductive effect.
+		\item dark current $ I_D $ is the relatively small electric current that flows even when no photons are entering the device
+		\item $ I_{photon} > I_D $
+		\item $ I_{total} =  I_{photon} + I_D $
+		\item \includegraphics[width=\linewidth]{img/photodiode graph}
+	\end{itemize}
+	\subsection{Avalanche PD}
+	Used for high current capacity
 \end{document}
 
