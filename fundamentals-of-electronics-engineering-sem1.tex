@@ -40,9 +40,6 @@
 	\end{itemize}
 	\section*{Assignment 1}
 	\begin{enumerate}
-		\item make a list of diff of electrical properties of Si and Ge (stuff like diffusion const, leakage current, operating temp, etc.)
-		\item Why Si is preferred over Ge(cost, smol leakage current, good for high temp., high power handling)
-		\item Differences b/w direct \& indirect band gap SC
 		\item how zener diode can be used as voltage regulator
 	\end{enumerate}
 	\newpage
@@ -71,7 +68,7 @@
 		\end{tabular}
 			\item Small leakage current -> no false triggering(randomly turning on)
 			\item Therefore, Si is better because no false triggering.
-			\item $ I_{0(T_0)}  = I_{0(T_1)}  \times  2^{\frac{T_2 - T_1}{10}}$
+			\item $ I_{0(T_2)}  = I_{0(T_1)}  \times  2^{\frac{T_2 - T_1}{10}}$
 			\item $ I_0 $ will double every 10\degree C rise in temp(for Si, Ge)
 			\item $ I_0 $ is 7\% higher for 1\degree C rise in temp.
 			\item Si is better for high temp because smaller $ I_0 $, which can eliminate false triggering.
@@ -317,10 +314,10 @@
 	\end{itemize}
 
 	\subsection{Effect of temp. on $ \sigma $ in N type SC}
-	$ n \approx N_D $ \\
-	$ N_c  e^{-\frac{E_c-E_F}{kT}}  \approx N_D$ \\
-	$ ln\frac{N_C}{N_D}  = \frac{E_C - E_F}{kT}$ \\
-	$ E_F = E_C - kT\; ln \frac{N_C}{N_D} $
+	$$ n \approx N_D $$
+	$$ N_c  e^{-\frac{E_c-E_F}{kT}}  \approx N_D$$
+	$$ ln\frac{N_C}{N_D}  = \frac{E_C - E_F}{kT}$$
+	$$ E_F = E_C - kT\; ln \frac{N_C}{N_D} $$
 	\begin{itemize}
 		\item \textbf{Case 1} T = 0K \\
 		$ E_F = E_C $ so, no holes and no $ e^- $
@@ -343,7 +340,24 @@
 		\item \textbf{if $ N_D > N_C $} $ E_F > E_C $
 		\item \textbf{if $ N_D < N_C $} $ E_F < E_C $
 	\end{enumerate}
-	\subsection{Effect of * in P type SC: HOMEWORK}
+	\subsection{Effect in P type SC}
+	In p type SC, $ p \approx N_A $
+	$$ \therefore N_A = N_V e^{-\dfrac{E_F-E_V}{kT}} $$
+	$$ \therefore ln\dfrac{N_V}{N_A}  = {\dfrac{E_F-E_V}{kT}}$$
+	$$ E_F = E_V + kT \ln\dfrac{N_V}{N_A} $$
+	\paragraph{Variation with temperature}
+	\begin{enumerate}
+		\item \textbf{T = 0K} $ \implies  E_F = E_V$
+		\item \textbf{T = 300K} $ E_F = E_V + kT \ln\dfrac{N_V}{N_A} $
+		\item \textbf{T > 300K} $ E_F\uparrow as \; T\uparrow $
+	\end{enumerate}
+	
+	\paragraph{Variation with doping}
+	\begin{enumerate}
+		\item $ N_A \approx N_V \rightarrow E_F = E_V$
+		\item $ N_A > N_V \rightarrow E_F < E_V $
+		\item $ N_A < N_V \rightarrow E_F > E_V $
+	\end{enumerate}
 	
 	\section{Hall Effect}
 	Hall Effect States that If a specimen(metal/SC) carrying current $ I $ is placed in transverse magnetic field $ B $, $ E $ is induced in a direction $ \perp $ to both $ B \& I $ (fig. \ref{fig:hall-effect})
@@ -402,10 +416,11 @@
 		\item \textbf{Indirect Band Gap SC} like Ge, Si; give out 1\% light, 99\% heat
 	\end{itemize}
 
+
 	\chapter{SC Diode}
 	\begin{itemize}
 		\item P-N Junction Diode
-		\item \textbf{Metal SC diode} like Schottly Diode, Point contact Diode
+		\item \textbf{Metal SC diode} like Schottky Diode, Point contact Diode
 	\end{itemize}
 	\section{P-N Junction Diode}
 	Formed when a bonding force is created b/w P-type and N-type SC. \\
@@ -594,5 +609,57 @@
 	\end{itemize}
 	\subsection{Avalanche PD}
 	Used for high current capacity
+	\subsection{Tunnel Diode}
+	\begin{itemize}
+		\item \includegraphics[width=0.2\linewidth]{img/Tunnel-Diode}
+		\item made from GaAs
+		\item exhibits tunneling effect hence called tunnel diode
+		\item fastest diode
+		\item doping $ \propto \dfrac{1}{\sqrt{Doping}} $
+		\item switching time is pico seconds
+		\item smaller in size, easy to fabricate, negligible internal power consumption
+		\item \includegraphics{img/Equivalent-circuit-of-Tunnel-diode}
+		\item negative resistance: due to tunneling
+		\item \includegraphics[width=\linewidth]{img/Tunnel-Diode-I-V-Characteristics} \\
+		$ I_P $ = Peak current \\ $ I_V $ = Valley current
+		\item GaAs is used because $ \dfrac{I_P}{I_V}  = 50$ (7.5 in Ge, 2.5 in Si)
+		\item exhibits triple valued property: $ 0 - V_P' , V_P'-V_V', V_V'-V_F $
+		\item used in pulsed ckt, oscillators, etc.
+	\end{itemize}
+
+	\section{Clipper and Clamper circuit}
+	Clippers are networks that employ diodes to 'clip' away a portion of an input signal without distorting the remaining portion of the waveform. For example, in single diode rectifiers.
+	\subsection{Series clipper circuit}
+	\includegraphics[width=\linewidth]{img/positiveseriesclipper}	\includegraphics[width=\linewidth]{img/series-positive-clipper-with-bias}
+	\includegraphics[width=\linewidth]{img/series-negative-clipper-with-bias}
+	\subsection{Parallel clipper circuit}		\includegraphics[width=\linewidth]{img/shunt-parallel-nagative-clipper}
+	\includegraphics[width=\linewidth]{img/bias-shunt-parallel-nagative-clipper}
+	
+	\subsection{Clamper circuit}
+	A clamper is a network constructed of a diode, a resistor, and a capacitor that shifts a waveform to a different DC level without changing the appearance of the applied signal.
+	\includegraphics[width=\linewidth]{img/negativeclamper}
+	\begin{enumerate}
+		\item in fwd bias, capacitor will charge instantaneously
+		\item Assume that the period when diode is off the capacitor held on its established lvl.
+	\end{enumerate}
+	A good resource: \href{http://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/rectifier/clampercircuits.html}{http://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/rectifier/clampercircuits.html}
+	
+	\subsection{Rectifier}
+	AC signal to DC signal.\\
+	$\star$\textbf{Peak Inverse voltage/Peak Reverse Voltage}: The voltage that must not be exceeded in reverse bias region(a property of the specific diode)
+		\subsubsection{Half wave rectifier}
+		$ V_{DC} =  \dfrac{V_{max}}{\pi}  = 0.318 V_{max} $
+		\includegraphics[width=\linewidth]{img/half rectifier}
+		\\
+		Because the knee voltage is non 0 in non ideal cases, the waveform looks like: \\
+		\includegraphics[width=0.5\linewidth]{img/half rectifier waveform} \\
+		In this case, 		$ V_{DC} = \dfrac{V_{max} - V_K}{\pi}  = 0.318 (V_m - V_K)$\\
+		$$ Efficiency\ of\ Half\ rectifier = \dfrac{DC\ power\ output}{AC\ power\ input} $$
+		$$\eta = \dfrac{(\dfrac{I_m}{\pi})^2 \times R_L}{(\dfrac{I_m}{2})^2(r_f + R_L)}$$ (where $ r_f  $ is diode voltage)
+		$$ \eta = \dfrac{0.406}{1+\dfrac{r_f}{R_L}} $$
+		
+		\subsubsection{Full wave rectifier}
+		\includegraphics[width=\linewidth]{img/full rectifier}
+
 \end{document}
 
