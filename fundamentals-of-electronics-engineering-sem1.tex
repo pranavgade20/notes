@@ -661,5 +661,48 @@
 		\subsubsection{Full wave rectifier}
 		\includegraphics[width=\linewidth]{img/full rectifier}
 
+	\chapter{Transistors}
+	Transfer + Resistor
+	\section{BJT(Bipolar Junction Transistor)}
+		\begin{itemize}
+			\item Both $ e^- $ and holes are involved in flow of electricity
+			\item made in 1947 by William Schokley
+			\item used as amplifiers
+			\item is a CCD(Current controlled Device)
+			\item 3 terminals - Emitter(emits $ e^- $), Base(in b/w E and C), Collector(collects $ e^- $)
+			\item Emitter is highly doped
+			\item Base is lightly doped(to reduce recombination, so that $ e^- $ can flow to collector easily) and small(to reduce transit time\footnote{time taken to move from emitter to collector})
+			\item Base is the region where transistor action takes place
+			\item Collector is moderately doped and large(to collect $ e^- $)
+			\item Leakage current also flows(due to minority cc)
+			\item therefore noisy device
+			\item Thermal stability is less
+			\item \textbf{Types of BJTs} \\
+				\includegraphics[width=0.9\linewidth]{img/bjt types}
+			\item arrows always show direction of current flow
+			\item in npn: current due to majority $ e^- $ \\in pnp: current due to majority holes
+			\item Operating cases: \\
+				\begin{enumerate}
+					\item $ J_{EB} $ as well as $ J_{BC} $ reverse biased: negligible current flow (off switch)
+					\item $ J_{EB} $ as well as $ J_{BC} $ forward biased: very large current (on switch)(\textbf{HOMEWORK:justify})
+					\item $ J_{EB} $ forward, $ J_{BC} $ reverse biased: Forward active region - medium current
+					\item $ J_{EB} $ reverse, $ J_{BC} $ forward biased: Reverse active region - used rarely
+				\end{enumerate}
+		\end{itemize}
+	\subsection{npn transistor}
+		\begin{itemize}
+			\item current due to majority $ e^- $
+			\item only when $ J_E $ is FB and $ J_C $ is RB, then transistor is active
+			\item \includegraphics[width=0.8\linewidth]{img/npntransistor}
+		\end{itemize}
+	\subsubsection{Operation}
+	\includegraphics[width=\linewidth]{img/bjt basic op}\\\\
+	when Emitter is connected to -ve, $ e^- $ move from E to B(since in forward bias). Experimentally, 5-6 $ e^- $ out of 100 recombine in base region. Now, Collector is connected to +ve. Since $ e^- $ are minority cc in Base, they will be favored to cross the base-collector reverse biased depletion region. 95-96\% $ e^- $ cross to the collector. \\
+	(in the diagram) $ V_{BE} >> V_{CB} $\\
+	$ I_{C0} $ is the drift current due to minority cc\\
+	$ I_E \ or\ I_C $ is diffusion current\\
+	$ I_B $ is due to recombination
+	\subsection{pnp transistor}
+	homework
 \end{document}
 
