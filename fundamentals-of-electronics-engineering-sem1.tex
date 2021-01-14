@@ -710,5 +710,44 @@
 	$ I_B $ is due to recombination
 	\subsection{pnp transistor}
 	\href{https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/transistors/bipolarjunctiontransistor/pnptransistor.html}{https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/transistors/bipolarjunctiontransistor/pnptransistor.html}
+	
+	\section{Diode equivalent circuit of Transistor}
+	\includegraphics[width=0.6\linewidth]{img/transistors diode equivalent}
+	\section{Transistor Configurations or Connections}
+	\begin{tabular}{|c|c|c|c|}
+		\hline
+		Configuration & Input & Output & Reference \\
+		\hline
+		CB & E & C & Base ref \\
+		\hline
+		CE & B & C & Emitter \\
+		\hline
+		CC & B & E & Collector \\
+		\hline
+	\end{tabular} \\
+	\textbf{Input characteristics} $ V_{o/p} $ constant\\
+	\textbf{Output characteristics} $ I_{i/p} $ constant
+	
+	\subsection{Common Base Connection}
+	\includegraphics[width=0.8\linewidth]{img/npn cb} \\
+	$\star$ current amplification factor $$ \alpha = \dfrac{\Delta T_c}{\Delta I_E} \rvert_{V_{CB = constant}}$$
+	DC values considered: $ I_C = \alpha I_E $
+	$$I_C = \alpha I_E + I_{CBO}$$
+	$ I_{CBO} $ is the leakage current when $ I_E = 0 $
+	$$I_C = \alpha (I_C + I_B)+I_{CBO}$$
+	$$I_C= \dfrac{\alpha}{1-\alpha}I_B + \dfrac{I_{CBO}}{1-\alpha}$$
+	
+	\subsection{Input characteristics}
+	\includegraphics[width=0.6\linewidth]{img/inputcharacteristicscbconfiguration}
+	\subsubsection{Input resistance}
+	at const $ V_{CB} $
+	$$r_i = \dfrac{\Delta V_{EB}}{\Delta I_E} $$
+	\subsection{Base width modulation/Early effect}
+	As $ V_{CB} $ $\uparrow$ $ w $ in Base $\downarrow$ so recombination $\downarrow$ so base current $\downarrow$ so $ I_E \& I_C $ $\uparrow$
+	\subsection{Output characteristics}
+	\includegraphics[width=0.6\linewidth]{img/oputputcharacteristicscbconfiguration}
+	\subsubsection{Output resistance}
+	at const $ I_E $
+	$$r_o = \dfrac{\Delta V_{CB}}{\Delta I_C} $$
 \end{document}
 
