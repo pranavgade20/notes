@@ -611,20 +611,22 @@
 	Used for high current capacity
 	\subsection{Tunnel Diode}
 	\begin{itemize}
+		\item by Japanese Esaki in 1948
 		\item \includegraphics[width=0.2\linewidth]{img/Tunnel-Diode}
 		\item made from GaAs
 		\item exhibits tunneling effect hence called tunnel diode
 		\item fastest diode
-		\item doping $ \propto \dfrac{1}{\sqrt{Doping}} $
+		\item $ w \propto \dfrac{1}{\sqrt{Doping}} $
+		\item doping is highest at 1/10$ ^3 $ ratio. Hence, w is less
 		\item switching time is pico seconds
-		\item smaller in size, easy to fabricate, negligible internal power consumption
+		\item smaller in size, easy to fabricate, negligible internal power consumption, low noise
 		\item \includegraphics{img/Equivalent-circuit-of-Tunnel-diode}
 		\item negative resistance: due to tunneling
 		\item \includegraphics[width=\linewidth]{img/Tunnel-Diode-I-V-Characteristics} \\
 		$ I_P $ = Peak current \\ $ I_V $ = Valley current
 		\item GaAs is used because $ \dfrac{I_P}{I_V}  = 50$ (7.5 in Ge, 2.5 in Si)
-		\item exhibits triple valued property: $ 0 - V_P' , V_P'-V_V', V_V'-V_F $
-		\item used in pulsed ckt, oscillators, etc.
+		\item exhibits triple valued property: some $ I+x $ can be obtained thrice as long as $ I_V < I_x < I_P $
+		\item used in relaxation oscillators, sawtooth voltage generator, Cathode Ray Oscillator
 	\end{itemize}
 
 	\section{Clipper and Clamper circuit}
@@ -659,6 +661,10 @@
 		$$ \eta = \dfrac{0.406}{1+\dfrac{r_f}{R_L}} $$
 		
 		\subsubsection{Full wave rectifier}
+		\begin{enumerate}
+			\item \textbf{Bridge Network}
+			\item \textbf{Center Tap Transformer}
+		\end{enumerate}
 		\includegraphics[width=\linewidth]{img/full rectifier}
 
 	\chapter{Transistors}
@@ -698,11 +704,11 @@
 	\subsubsection{Operation}
 	\includegraphics[width=\linewidth]{img/bjt basic op}\\\\
 	when Emitter is connected to -ve, $ e^- $ move from E to B(since in forward bias). Experimentally, 5-6 $ e^- $ out of 100 recombine in base region. Now, Collector is connected to +ve. Since $ e^- $ are minority cc in Base, they will be favored to cross the base-collector reverse biased depletion region. 95-96\% $ e^- $ cross to the collector. \\
-	(in the diagram) $ V_{BE} >> V_{CB} $\\
+	(in the diagram) $ V_{BE} << V_{CB} $\\
 	$ I_{C0} $ is the drift current due to minority cc\\
 	$ I_E \ or\ I_C $ is diffusion current\\
 	$ I_B $ is due to recombination
 	\subsection{pnp transistor}
-	homework
+	\href{https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/transistors/bipolarjunctiontransistor/pnptransistor.html}{https://www.physics-and-radio-electronics.com/electronic-devices-and-circuits/transistors/bipolarjunctiontransistor/pnptransistor.html}
 \end{document}
 
