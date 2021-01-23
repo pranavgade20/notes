@@ -172,7 +172,7 @@
   	 	 $ L = \sqrt{D\tau} $, where $\tau$ is the average lifetime\\
   	 	 $ e^- $ diffusion length $ L_n = \sqrt{D_n\tau_n} $
   	 	 \item \textbf{Concentration Gradient}: $ \frac{dn}{dx} $ is the $ e^- $ concentration gradient. $ \frac{dp}{dx} $ is holes concentration gradient.
-  	 	 \item $ J_p(diff) = +q\:D_n\frac{dn}{dx}  A/cm^2$\\$ J_n(diff) = -q\:D_p\frac{dp}{dx}  A/cm^2$ \\
+  	 	 \item $ J_n(diff) = +q\:D_n\frac{dn}{dx}  A/cm^2$\\$ J_p(diff) = -q\:D_p\frac{dp}{dx}  A/cm^2$ \\
   	 	 $ J_{(diffusion)} = J_{n(diff)} + J_{p(diff)} $ \\
   	 	 $ I_n(diff) = J_{n(diff}) \times A $, where A is the cross sect. area\\
   	 	 Total current, $ J = J(diff) + J(drift) $ \\
@@ -193,7 +193,7 @@
 	\section{Doping}
 	process of adding impurities in SC. doping $\uparrow$, carrier conc.$\uparrow$, conductivity $\sigma$$\uparrow$
 	\begin{enumerate}
-		\item Trivalent/Acceptor impurities: B, Al, Ge, Sn
+		\item Trivalent/Acceptor impurities: B, Al, Ga, Sn
 		\item Pentavalent/Donor impurities: P, As, Sb, Bi
 		\item doping is based on conc. of impurities.
 		\begin{enumerate}
@@ -477,7 +477,7 @@
 		\item If $ V_D > V_0 \implies I_F  \uparrow$ 
 	\end{itemize}
 	$\star$ \textbf{Cut-in Voltage, or knee voltage $ V_Y $} is the min. of $ V_D $ ($ V_Y = 0.3V(for \; Ge) =0.7V(for \; Si) $) \\
-	forward current\footnote{forward current is independent of T} $ I_f = I_0[ e^{V_d/\eta k T}] $ (where $ I_0 $ is the reverse saturation current; $ V_d $ is the voltage across the diode, $\eta$ is the recombination factor or utility factor (1 for Ge, 2 for Si)) \\
+	forward current\footnote{forward current is independent of T} $ I_f = I_0[ e^{V_d/\eta V_T}] $ (where $ I_0 $ is the reverse saturation current; $ V_d $ is the voltage across the diode, $\eta$ is the recombination factor or utility factor (1 for Ge, 2 for Si)) \\
 	$ V_D = \eta V_T log(\dfrac{I_f+I_0}{I_0}) \approx \eta V_T log(\dfrac{I_f}{I_0}) $ \\
 	$ V_D \downarrow $ by $ 2 mV $ per 1C
 	
@@ -544,9 +544,9 @@
 	\subsection{Numericals}
 	\begin{enumerate}
 		\item \textbf{Find the forward current of GE diode operating at room temp when fwd. voltage is 100mV; $ I_0 = 20\mu A $ }\\
-		$ I_f = I_0[ e^{V_d/\eta k T}]  = 0.936mA$
+		$ I_f = I_0[ e^{V_d/\eta V_T}]  = 0.936mA$
 		\item \textbf{A Si diode has time const 25 ns at room temp; $ I_F = 5mS $ Find $ C_d $} \\
-		$\rightarrow$ $ C_d = \tau g; g = \dfrac{I_f}{\eta V_T} $
+		$\rightarrow$ $ C_d = \tau g; g = \dfrac{I_f}{\eta V_T} $ \\
 		\includegraphics[width=\linewidth]{img/numericals 2nd jan}
 	\end{enumerate}
 
@@ -690,7 +690,7 @@
 			\item Operating cases: \\
 				\begin{enumerate}
 					\item $ J_{EB} $ as well as $ J_{BC} $ reverse biased: negligible current flow (off switch)
-					\item $ J_{EB} $ as well as $ J_{BC} $ forward biased: very large current (on switch)(\textbf{HOMEWORK:justify})
+					\item $ J_{EB} $ as well as $ J_{BC} $ forward biased: very large current (on switch)(coz both in fwd bias`)
 					\item $ J_{EB} $ forward, $ J_{BC} $ reverse biased: Forward active region - medium current
 					\item $ J_{EB} $ reverse, $ J_{BC} $ forward biased: Reverse active region - used rarely
 				\end{enumerate}
@@ -730,24 +730,109 @@
 	
 	\subsection{Common Base Connection}
 	\includegraphics[width=0.8\linewidth]{img/npn cb} \\
-	$\star$ current amplification factor $$ \alpha = \dfrac{\Delta T_c}{\Delta I_E} \rvert_{V_{CB = constant}}$$
+	$\star$ current amplification factor $$ \alpha = \dfrac{\Delta I_C}{\Delta I_E} \rvert_{V_{CB = constant}}$$
 	DC values considered: $ I_C = \alpha I_E $
 	$$I_C = \alpha I_E + I_{CBO}$$
 	$ I_{CBO} $ is the leakage current when $ I_E = 0 $
 	$$I_C = \alpha (I_C + I_B)+I_{CBO}$$
 	$$I_C= \dfrac{\alpha}{1-\alpha}I_B + \dfrac{I_{CBO}}{1-\alpha}$$
 	
-	\subsection{Input characteristics}
+	\subsubsection{Input characteristics}
 	\includegraphics[width=0.6\linewidth]{img/inputcharacteristicscbconfiguration}
 	\subsubsection{Input resistance}
 	at const $ V_{CB} $
 	$$r_i = \dfrac{\Delta V_{EB}}{\Delta I_E} $$
-	\subsection{Base width modulation/Early effect}
-	As $ V_{CB} $ $\uparrow$ $ w $ in Base $\downarrow$ so recombination $\downarrow$ so base current $\downarrow$ so $ I_E \& I_C $ $\uparrow$
-	\subsection{Output characteristics}
+	lowest among all configs $\approx 100 \Omega$
+	\subsubsection{Output characteristics}
 	\includegraphics[width=0.6\linewidth]{img/oputputcharacteristicscbconfiguration}
 	\subsubsection{Output resistance}
 	at const $ I_E $
 	$$r_o = \dfrac{\Delta V_{CB}}{\Delta I_C} $$
+	$ r_o \approx 450 k\Omega $
+	\subsection{Base width modulation/Early effect}
+	As $ V_{CB} $ $\uparrow$ $ w $ in Base $\downarrow$ so recombination $\downarrow$ so base current $\downarrow$ so $ I_E \& I_C $ $\uparrow$
+	\subsection{Common Emitter Configuration}
+	\includegraphics[width=0.8\linewidth]{img/commonemitterconfiguration}
+	\begin{itemize}
+		\item o/p taken from collector
+		\item $\beta$ is gain
+		\item Mainly used for amplification purpose
+		\item $$I_E = I_B + I_C$$ 
+				$$I_C = \alpha I_E + I_{CBO}$$
+				$$I_C = \alpha (I_B + I_C) + I_{CBO}$$
+				$$I_C(1-\alpha) = \alpha I_B +I_{CBO}$$
+				$$I_C = \dfrac{\alpha}{1-\alpha}I_B + \dfrac{I_{CBO}}{1-\alpha}$$
+				$$\beta = \dfrac{\Delta I_C}{\Delta I_B} = \dfrac{I_C}{I_B} $$
+				$$\alpha = \dfrac{I_C}{I_E} $$
+				$$I_E = I_B + I_C$$
+				$$ \beta = \dfrac{\alpha}{1-\alpha} $$
+				$$\alpha = \dfrac{\beta}{1+\beta}$$
+				$$\therefore I_C = \beta I_B + (1+\beta) I_{CBO}$$
+				$$I_{CEO} = (1+\beta) I_{CBO}$$
+				$$\therefore I_C = \beta I_B + I_{CEO} $$
+	\end{itemize}
+	\subsubsection{Input Characteristics}
+	$$r_i = \dfrac{V_{BE}}{I_B}$$\\
+	\includegraphics[width=\linewidth]{img/oputputcharacteristicsceconfiguration}\\\\
+	medium/lower resistance $\approx 750 \Omega$
+	\subsubsection{Output Characteristics}
+	see fig. above
+	$$r_o = \dfrac{\Delta V_{CE}}{\Delta I_C}$$
+	$ r_o \approx 45 k\Omega $
+	\subsection{Common Collector Configuration}
+	$$\gamma = \dfrac{\Delta I_E}{\Delta I_B}$$
+	$$\gamma = 1 + \beta = \dfrac{1}{1-\alpha}$$
+	\subsubsection{Input Characteristics}
+	maximum resistance $\approx 750 k\Omega$
+	\subsection{}
+	$$ I_f = I_0e^{\dfrac{V_d}{\eta V_T}} $$
+	$$ I_e = I_{CO}e^{\dfrac{V_{BE}}{\eta V_T}} $$
+	where $ V_{BE} $ is 0.7 for Si, 0.2 for Ge
+	$$ P = |I_C| V_{CE} $$
+	\subsubsection{Transistor as amplifier in CE}
+	In positive input cycle, FB across the EB jxn or $ J_E $ $\uparrow$ \& more more $ e^- $ will flow, collector current $\uparrow$ \& potential across $ R_C $ $\uparrow$ \& opposite happens in -ve cycle.
+	\includegraphics[width=\linewidth]{img/ce amplifier}\\
+	When no signal is applied, the input ckt is FB by $ V_{BB} $ \& dc current $ I_C $ flows. This is called \textbf{zero signal collector current.}
+	$$ i_C = i_c + I_C $$
+	$\star$ small i($ i_c $) is for AC, large I($ I_C $) is for DC\\
+	$$ V_O = -i_C R_C $$
+	
+	\section{DC Load line and Operating point(Q point)}
+	A st. line plotted on $ I_C $ vs $ V_{CE} $ graph to calculate the value of $ I_C $ \& $ V_{CE} $ in a given circuit\\
+	\includegraphics[width=\linewidth]{img/dc load line}\\
+	Using KVL:
+	$$ V_{CC} - I_CR_C - V_{CE} $$
+	$$ I_C = \dfrac{-1}{R_C} V_{CE} + \dfrac{V_{CC}}{R_C} $$
+	$$ y = mx + c \rightarrow\ this\ line\ is\ DC\ load\ line $$
+	\begin{itemize}
+		\item When $ I_B $ varies Q point also varies
+		\item If BJT is used as amplifier, then Q point is selected approx in middle of load line to obtain distortion free output
+	\end{itemize}
+	\subsection{Instability in $ I_C $}
+	$$ I_C = \beta I_B + (1+\beta) I_{CB} $$
+	so, $ I_C $ is unstable due to variation in $ I_{CB} $, $ V_{BE} $, $\beta$\\
+	$$ \therefore I_C = f(I_{CB}, V_{BE}, \beta) $$
+	\subsubsection{due to temp}
+	$ I_{C0} $ varies, $ I_C\uparrow, V_{CE} \downarrow $
+	\subsubsection{Stability factor}
+	$ S, S'(S_V), S''(S_\beta) $ $\rightarrow$ should be as low as possible for more stability
+	$$ S = \dfrac{\partial I_C}{\partial I_{C0}} $$
+	$$ S' = \dfrac{\partial I_C}{\partial V_{BE}} = S_V $$
+	$$ S'' = \dfrac{\partial I_C}{\partial \beta} = S_\beta $$
+	\subsection{Biasing techniques}
+	\begin{itemize}
+		\item Fixed bias ckt or Base Bias ckt
+		\item C to B bias
+		\item Self bias (highest stability)
+	\end{itemize}
+
+	\subsubsection{Fixed bias}
+	if we need to use 1000 transistors, we would need 2000 batteries. So, we use fixed bias:\\
+	\includegraphics[width=0.5\linewidth]{img/fixed bias}\\
+	$$ I_B = \dfrac{V_{CC}-V_{BE}}{R_B} $$
+	since all these are fixed values, this is called fixed bias ckt
+	$$ \therefore I_B = constant $$
+	$$ I_C = \beta I_B, V_{CE} = V_{CC} - I_CR_C $$
+	now, find Q point
 \end{document}
 
