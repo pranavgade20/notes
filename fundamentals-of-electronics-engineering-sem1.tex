@@ -819,6 +819,13 @@
 	$$ S = \dfrac{\partial I_C}{\partial I_{C0}} $$
 	$$ S' = \dfrac{\partial I_C}{\partial V_{BE}} = S_V $$
 	$$ S'' = \dfrac{\partial I_C}{\partial \beta} = S_\beta $$
+	$$ \therefore \Delta I_C \approxeq \dfrac{\partial I_C}{\partial I_{C0}} \Delta I_{C0} + \dfrac{\partial I_C}{\partial V_{BE}} \Delta V_{BE} + \dfrac{\partial I_C}{\partial {\beta}} \Delta {\beta}$$
+	$$ \Delta I_C \approxeq \therefore S \Delta I_{C0} + S' \Delta V_{BE} +S'' \Delta {\beta}$$
+	hence, for $ I_C $ to remain stable, $ \Delta I_C $ should be small hence S, S', S'' should be small.\\
+	Now, $ S = \dfrac{\partial I_C}{\partial I_{C0}} $; and $ I_C = \beta I_B + (1+\beta) I_{C0} $. Therefore:
+	$$ \dfrac{\partial I_C}{\partial I_{C}} = \beta \dfrac{\partial I_B}{\partial I_{C}} + (1+\beta) \dfrac{\partial I_{C0}}{\partial I_{C}} $$
+	$$ \therefore S = \dfrac{\partial I_C}{\partial I_{C0}} = \dfrac{1+\beta}{1-\beta \dfrac{\partial I_B}{\partial I_C}} $$
+	Ideally, S = 1
 	\subsection{Biasing techniques}
 	\begin{itemize}
 		\item Fixed bias ckt or Base Bias ckt
@@ -832,7 +839,14 @@
 	$$ I_B = \dfrac{V_{CC}-V_{BE}}{R_B} $$
 	since all these are fixed values, this is called fixed bias ckt
 	$$ \therefore I_B = constant $$
-	$$ I_C = \beta I_B, V_{CE} = V_{CC} - I_CR_C $$
-	now, find Q point
+	$$ I_C = \beta I_B, V_{CE} = V_{CC} - I_C R_C $$
+	$ \dfrac{\partial I_B}{\partial I_{C}}  = 0; S = 1+\beta. So, fixed bias is unstable circuit.$
+	$$ V_E = 0 $$
+	$$ V_B = V_{CC} - I_B R_B $$
+	$$ V_C = V_{CC} - I_C R_C $$
+	$ R_C$ is selected such that $ V_C > V_B.\ So,\ V_C > V_B > V_E $ in active region
+	$$ \therefore J_E\ is\ in\ FB $$
+	$$ \therefore J_C\ is\ in\ RB $$
+
 \end{document}
 
