@@ -847,6 +847,35 @@
 	$ R_C$ is selected such that $ V_C > V_B.\ So,\ V_C > V_B > V_E $ in active region
 	$$ \therefore J_E\ is\ in\ FB $$
 	$$ \therefore J_C\ is\ in\ RB $$
+	
+	\subsection{Ampliifer \& Small Signal model of BJT}
+	//TODO
+	
+	Now $\Delta$ in $ V_{BE} $ will cause $\Delta$ in $ I_B $; let $ \Delta I_B = \pm 2\mu A $\\
+	$ \Delta I_B $ cause $ \Delta I_C $; $ I_C = \beta \Delta I_B = 100(\pm 2 \mu A) = \pm 0.2mA $\\
+	$ \Delta I_C $ cause $ \Delta V_0 $ or $ \Delta V_{CE} $; $ V_0 = V_{CE} = V_{CC} - I_C R_C = -(\pm 0.2) $\\
+	$ \Delta V_0 = \Delta V_{CE} = -I_C R_C = \mp 0.2 \times 5 = \mp 1V $\\
+	Voltage amplification of 50x is achieved.\\
+	$\star$ Voltage amp $\uparrow$ if $\beta \uparrow$, $ R_C \uparrow $
+	
+	\subsection{Signal Variation}
+	max/peak change in value of I or V wrt DC value. It has 2 types:
+	\begin{enumerate}
+		\item small signal amplifier: variation is much smaller than DC value
+		\item large signal amplifier: variation is large compared to DC value
+	\end{enumerate}
 
+	\section{Small circuit model}
+	\subsection{H parameter model}
+	obtained from h parameter equation\\
+	$ V_! = h_i I_1 + h_r V_2 $ \\
+	$ I_2 = h_y I_1 + h_0 V_2 $ \\\\
+	
+	$ h_i =  $ input resistance when output node is shorted($ V_2 = 0 $) : $ h_i = \dfrac{V_1}{I_1}|_{V_2=0} $
+	$ h_r =  $ reverse voltage gain V = $ \dfrac{V_1}{V_2}|_{V_2 = 0} $
+	
+	\subsection{Current mirror circuit}
+	two identical transistors, output current is forced equal to input current.\\
+	
 \end{document}
 
